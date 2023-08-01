@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: antiquewhite;
+  overflow-x: hidden;
+}
+
+h1 {
+  background-image: url(./img/barcelona.jpeg);
+  background-repeat: round;
+  background-size: cover;
+  height: 150px;
+  width: 100%;
+  text-align: center;
+  color: rgb(101, 22, 22);
+}
+
+h2 {
+  color: rgb(101, 22, 22);
+  margin: 32px;
+}
+.description {
+  color: rgb(101, 22, 22);
+  margin: 0px;
+}
+
+.inform {
+  margin: 32px;
+}
+
+.introduction {
+  margin-top: 10px;
+  text-align: justify;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  margin-top: 32px;
+}
+
+.places {
+  margin-top: 10px;
+  text-align: justify;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+.list {
+  margin-left: 32px;
+}
+
+.ending {
+  margin-top: 10px;
+  text-align: justify;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+.navbar-nav {
+  display: block;
+  width: 100%;
+}
+
+.navbar-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial;
+  display: flex;
+  background-color: grey;
+  padding: 20px 5px;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+.navbar-nav a:hover {
+  color: brown;
+}
+.navbar-nav ul {
+  display: flex;
+
+  list-style: none;
+  padding: 0;
+}
+.navbar-nav-hidden ul {
+  display: none;
+}
+
+.navbar-nav li {
+  text-align: center;
+  border: 1px solid brown;
+  display: flex;
+  width: 100%;
+}
+.navbar-nav li a {
+  width: 100%;
+}
+
+.inform {
+  text-align: justify;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+.thumbnail {
+  border: solid 3px rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 48px 2px rgba(40, 38, 38, 0.5);
+  cursor: pointer;
+  margin: 30px;
+  overflow: hidden;
+  max-height: 200px;
+  max-width: 300px;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.thumbnail img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.popup {
+  align-content: center;
+  animation: fadeIn 0.3s;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup.fade-out {
+  animation: fadeOut 0.3s both;
+}
+
+.popup__img {
+  max-height: 80%;
+  max-width: 80%;
+}
+
+.popup__close {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 35px;
+  position: fixed;
+  right: 35px;
+  top: 35px;
+}
+
+.popup__arrow {
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup__arrow,
+.popup__close {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.popup__close:hover,
+.popup__arrow:hover {
+  opacity: 1;
+}
+
+.popup__arrow--left {
+  left: 5%;
+}
+
+.popup__arrow--right {
+  right: 5%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 750px) {
+  .navbar-nav {
+    display: block;
+  }
+  .navbar-nav ul {
+    display: block;
+  }
+  .navbar-nav-hidden ul {
+    display: none;
+  }
+
+  .popup__close {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+  }
+
+  .popup__arrow {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .popup__arrow {
+    opacity: 0.2;
+  }
+
+  .popup__close:hover,
+  .popup__arrow:hover {
+    opacity: 0.3;
+  }
+}
